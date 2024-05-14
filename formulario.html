@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Formulario</title>
+</head>
+<body>
+    <h1 style="text-align: center;"><a href="index.html"><img src="imagenes/iconoi.png" width="45px" height="45px"></a>Formulario Primer Contacto de Tutoria</h1>
+    <h3>Debera ser contestado por el tutelado</h3>
+    <form action="liliana.gamez@upslp.edu.mx" method="post">
+        <p>Nombre: <input type="text" name="nombre" size="40"></p>
+        <p>Matricula: <input type="number" name="matricula" min="180000"></p>
+        <p>Semestre:
+            <select name="semestre">
+            <option>1ero</option>
+            <option>2do</option>
+            <option>3ro</option>
+            <option>4to</option>
+            <option>5to</option>
+            <option>6to</option>
+            <option>7mo</option>
+            <option>8vo</option>
+            <option>9no</option>
+            <option>9no +</option>
+          </select></p>
+        
+        <p>Fecha: <input type="date" name="fecha"></p>  
+        
+        <h3>Materias del semestre anterior</h3>
+        <p>Materia 1: <input type="text" name="mat1" size="40"></p>
+        <p>Materia 2: <input type="text" name="mat2" size="40"></p>
+        <p>Materia 3: <input type="text" name="mat3" size="40"></p>
+        <p>Materia 4: <input type="text" name="mat4" size="40"></p>
+        <p>Materia 5: <input type="text" name="mat5" size="40"></p>
+        <p>Materia 6: <input type="text" name="mat6" size="40"></p>
+
+        <h3>Calificaciones del semestre pasado</h3>
+        <p>Calificacion 1: <input type="number" name="cal1" min="0" max="10"> Calificacion 2: <input type="number" name="cal2" min="0" max="10"></p>
+        <p>Calificacion 3: <input type="number" name="cal3" min="0" max="10"> Calificacion 4: <input type="number" name="cal4" min="0" max="10"></p>
+        <p>Calificacion 5: <input type="number" name="cal5" min="0" max="10"> Calificacion 6: <input type="number" name="cal6" min="0" max="10"></p>
+        
+        <p>Cual fue la razon por la reprobaste el semestre pasado (Si es que aplica)</p>
+        <p><textarea name="texto" rows="4" cols="40" placeholder="Escribe tu razon"></textarea></p>
+
+        <p>Como consideras tu rendimiento en general</p>
+        <p>(Malo, Regular, Bueno, Excelente):</p>
+        <input type="range" name="rendimiento"
+        min="1" max="4" list="lista-rendimiento">
+        <datalist id="lista-rango">
+        <option value="1" label="Malo">
+        <option value="2" label="Regular">
+        <option value="3" label="Bueno">
+        <option value="4" label="Excelente">
+        </datalist>
+
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+          </p>
+      </form>
+</body>
+</html>
