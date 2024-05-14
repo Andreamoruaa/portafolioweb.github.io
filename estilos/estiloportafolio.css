@@ -1,0 +1,193 @@
+#menu ul 
+{
+	list-style:none;
+	margin:0;
+	padding:20;
+	text-align: center;
+}
+
+#menu ul li 
+{
+	background-color: hsl(280, 44%, 75%);
+	text-align: center;
+	left: 5%;
+}
+
+#menu ul a 
+{
+	display:block;
+	color: #fff;
+	text-decoration:none;
+	font-weight:400;
+	font-size:15px;
+	padding:10px;
+	font-family: "Saira Semi Condensed", sans-serif;
+	text-transform:uppercase;
+	letter-spacing:1px;
+	text-align: center;
+}
+
+#menu ul li 
+{
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+	width: 19vw;
+	text-align: center;
+}
+
+#menu ul li:hover 
+{
+	background: hsl(281, 45%, 69%);
+	text-align: center;
+	z-index: 25;
+}
+
+#menu ul ul
+{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background:#eee;
+	padding:0;
+	text-align: center;
+}
+
+#menu ul ul li 
+{
+	float:none;
+ 	width:18vw;
+ 	text-align: center;
+}
+
+#menu ul ul a 
+{
+	line-height:120%;
+	padding:10px 15px;
+	text-align: center;
+}
+
+#menu ul li:hover > ul 
+{
+	display:block;
+	text-align: center;
+}
+
+#menu
+{
+	height:4vw;
+	width: 90vw;
+	text-align: center;
+    margin-left: 15vw;
+}
+
+.inicio{
+    background-color: hsl(280, 35%, 65%);
+    text-align: center;
+    font-family: "Concert One", sans-serif;
+    font-size: 12vw;
+}
+.imginicio{
+    width: 7vw;
+    height: 12vh;
+    float: left;
+    margin-top: 2vh;
+}
+
+body{
+    background-color: hsl(280, 35%, 78%);
+}
+
+section.uno{
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+    width: 25vw;
+    margin-left: 5vw;
+	position: relative;
+}
+
+h1{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 2em;
+    text-align: center;
+    background-color: hsl(281, 45%, 69%);
+	height: 8vh;
+	position: relative;
+}
+
+section.dos{
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+    width: 25vw;
+    margin-left: 35vw;
+    margin-top: -50vh;
+	position: relative;
+}
+
+section.tres{
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+    width: 25vw;
+    margin-left: 65vw;
+    margin-top: -41vh;
+	position: relative;
+}
+article.uno{
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+    width: 25vw;
+	position: relative;
+}
+footer {
+    background-color: hsla(280, 35%, 65%, 0);
+    color: #000000;
+    text-align: center;
+    padding: 10px ;
+    position: fixed;
+    bottom: 0;
+    width: 97%;
+	font-family: "Nunito Sans", sans-serif;
+}
+
+article.dos{
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+    width: 98vw;
+	position:relative;
+	top: 8vh;
+}
+img.parcial{
+	width: 22vw;
+    height: 30vh;
+    padding: 2vh 2vw;
+}
+
+img.alvaro{
+	width: 15vw;
+    height: 50vh;
+    padding: 2vw;
+	float: left;
+}
+
+article.tres{
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+    width: 98vw;
+	position:relative;
+	margin-top: 70vh;
+}
+
+img.css{
+	width: 35vw;
+    height: 40vh;
+    padding: 2vw;
+}
+iframe{
+	width: 50vw;
+	height: 100vh;
+	text-align: center;
+	margin-left: 5vh;
+	position: relative;
+}
