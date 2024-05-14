@@ -1,0 +1,51 @@
+html {
+    background-color: hwb(150 25% 30%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 125%;
+    text-align:left;
+    hyphens: auto;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+article {
+    display: flex;
+    flex-direction:row ;
+    width: 45em;
+    margin: 2em;
+    border: black 3px solid;
+    background-color: hwb(150 50% 30%);
+}
+
+h2 {
+    margin: 1em;
+    padding: 0.2em;
+    border-right: black 2px solid;
+    display: flex;
+}
+img{
+    display: flex;
+    border: green 0.5em solid;
+}
+div {
+    margin: 2em;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    width: 50em;
+    height: 30em;
+}
+div p::first-letter{
+    float: left;
+    color: hwb(153 4% 58%);
+    font-size: 5rem;
+    font-style: normal;
+    line-height: 3rem;
+}
+
+
