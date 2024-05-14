@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Usuario y contraseña</title>
+    <script type = "text/javascript">
+        function alertName() { //primero el documento, despues el forms numero 0, agarra la variable veces y despues su valor
+        //parseInt pasa el valor a entero 
+        var usuario1= (document.forms[0].usuario.value); //declaracion de variables con "var"
+        var contrasenia1=(document.forms[0].contrasenia.value);
+        
+        if(usuario1=="admin" && contrasenia1=="admin"){
+            document.write('Acceso permitido <br> <a href=https://portafolioweb1-andreamoruabravo.000webhostapp.com/>Portafolio</a>');
+        }
+        else{
+            document.write("Acceso denegado");
+        }
+        
+        }
+        </script>
+</head>
+<body>
+    <form id="myform" onsubmit="return alertName();">
+        <p>Usuario: <input id="usuario" name="usuario" type="text"/></p>
+        <p>Contraseña: <input id="contrasenia" name="contrasenia" type="password"/></p>
+        <p><input type="submit"/></p>
+    </form>
+</body>
+</html>

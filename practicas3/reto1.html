@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            button{
+                background-color:lightcyan;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: larger;
+            }
+        </style>
+       
+    </head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <body>
+        
+        <p>Inicio de grafica <input id="inicio" name="iniciog" type="text"></p>
+        <button onclick="inicio()">Enter</button>
+        <p>Fin de grafica <input id="fin" name="fing" type="text"></p>
+        <button onclick="fin()"></button>
+        <div id="myPlot" style="width:100%;max-width:700px"></div>
+        <script>
+            let exp = "Math.sin(x)";
+            // Generate values
+            inicio(){
+                var numi;
+
+            }
+            const xValues = [];
+            const yValues = [];
+            for (let x = 10; x <= 2; x += 1) {
+                xValues.push(x);
+                yValues.push(eval(exp));
+            }
+            // Display using Plotly
+            const data = [{x:xValues, y:yValues, mode:"lines"}];
+            const layout = {title: "y = " + exp};
+            Plotly.newPlot("myPlot", data, layout);
+        </script>
+       
+    </body>
+</html>

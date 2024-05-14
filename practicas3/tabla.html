@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bienvenida del usuario</title>
+  <style>
+    p{
+      color: cadetblue;
+    }
+  </style>
+  <script type = "text/javascript">
+  function alertName() { //primero el documento, despues el forms numero 0, agarra la variable veces y despues su valor
+    //parseInt pasa el valor a entero 
+    var filas1= parseInt(document.forms[0].filas.value); //declaracion de variables con "var"
+    var columnas1= parseInt(document.forms[0].columnas.value);
+
+    document.write("<table border=1>");
+    for (i=1;i<=filas1;i++){
+            document.write("<tr>");
+        for(j=1;j<=columnas1;j++){
+            document.write("<td>Celda</td>");
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+    return true;
+  }
+  </script>
+</head>
+<body>
+    <form id="myform" onsubmit="return alertName();">
+        <p>Cuantas filas: <input id="filas" name="filas" type="text"/></p>
+        <p>Cuantas columnas: <input id="columnas" name="columnas" type="text"/></p>
+        <p><input type="submit"/></p>
+    </form>
+</body>
+</html>

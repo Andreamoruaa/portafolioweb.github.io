@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+<div id="myPlot2" style="width:100%;max-width:700px"></div>
+<div id="myPlot3" style="width:100%;max-width:700px"></div>
+    <script>
+        
+       const xArray = ["Programación 1", "Inglés 3", "Física 1", "Matematicas 1", "Progra Web","Nucleo 2"];
+        const yArray = [9, 7.5, 8, 8, 9,10];
+        const yArray2=[8.5,0,9.5,9,9,10];
+        const yArray3=[Math.floor(Math.random()*10)+1,Math.floor(Math.random()*10)+1,Math.floor(Math.random()*10)+1,Math.floor(Math.random()*10)+1,Math.floor(Math.random()*10)+1,Math.floor(Math.random()*10)+1];
+        
+        const data = [{
+            x:xArray,
+            y:yArray,
+            type:"bar",
+            orientation:"v",
+            marker: {color:"rgba(0,0,255,0.6)"}
+        }];
+        const layout = {title:"Andrea Morua Calificaciones 1"};
+        Plotly.newPlot("myPlot", data, layout);
+
+        const data2 = [{
+            x:xArray,
+            y:yArray2,
+            type:"bar",
+            orientation:"v",
+            marker: {color:"rgba(0,0,100,0.6)"}
+        }];
+        const layout2 = {title:"Andrea Morua Calificaciones 2"};
+        Plotly.newPlot("myPlot2", data2, layout2);
+
+        const data3 = [{
+            x:xArray,
+            y:yArray3,
+            type:"bar",
+            orientation:"v",
+            marker: {color:"rgba(0,0,500,0.6)"}
+        }];
+        const layout3 = {title:"Andrea Morua Calificaciones 3"};
+        Plotly.newPlot("myPlot3", data3, layout3);
+    </script>
+</body>
+</html>

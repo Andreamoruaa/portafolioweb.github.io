@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bienvenida del usuario</title>
+  <style>
+    p{
+      color: cadetblue;
+    }
+  </style>
+  <script type = "text/javascript">
+  function alertName() { //primero el documento, despues el forms numero 0, agarra la variable veces y despues su valor
+    //parseInt pasa el valor a entero 
+    var veces1= parseInt(document.forms[0].veces.value); //declaracion de variables con "var"
+    for(i=1;i<=veces1;i++)
+    {
+      document.write("<p>Este es un párrafo</p>");
+      //escribe en el documento, directamente en la pagina
+    }
+    return true;
+  }
+  </script>
+</head>
+<body>
+    <form id="myform" onsubmit="return alertName();">
+        
+        <p>Cuantos párrafos <input id="veces" name="veces" type="text" /></p>
+        <p><input type="submit" /></p>
+    </form>
+</body>
+</html>

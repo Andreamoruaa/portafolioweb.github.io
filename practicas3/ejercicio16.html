@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <body>
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+        <script>
+        
+            const xValues = ["Programación 1", "Inglés 3", "Física 1", "Matematicas 1", "Progra Web","Nucleo 2"];
+            const yValues = [Math.floor(Math.random()*10)+1,Math.floor(Math.random()*10)+1,Math.floor(Math.random()*10)+1,Math.floor(Math.random()*10)+1,Math.floor(Math.random()*10)+1,Math.floor(Math.random()*10)+1,0];
+            const barColors = ["rgba(0,0,250,0.6)", "rgba(0,0,255,0.5)","rgba(0,0,250,0.4)","rgba(0,0,250,0.3)","rgba(0,0,250,0.2)","rgba(0,0,250,0.1)"];
+            new Chart("myChart", {
+                type: "bar",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        backgroundColor: barColors,
+                        data: yValues
+                    }]
+                },
+                options: {
+                    legend: {display: false},
+                    title: {
+                        display: true,
+                        text: "Calificaciones RANDOMS"
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
+

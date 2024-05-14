@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Graficas</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <script>
+        //let exp = "Math.sin(x)";
+        // Generate values
+        function grafica(){
+            let exp=(document.forms[0].function.value);
+
+            var inicio1=parseInt(document.forms[0].inicio.value);
+            var fin1=parseInt(document.forms[0].fin.value);
+                const xValues = [];
+                const yValues = [];
+                for (let x = inicio1; x <= fin1; x += 0.1) {
+                    xValues.push(x);
+                    yValues.push(eval(exp));
+                }
+                // Display using Plotly
+                const data = [{x:xValues, y:yValues, mode:"lines"}];
+                const layout = {title: "y = " + exp};
+                Plotly.newPlot("myPlot", data, layout);
+                return false;
+        }
+    </script>
+    <form id="myform" onsubmit="return grafica();">
+        <p>Inicio: <input id="inicio" name="inicio" type="text"></p>
+        <p>Fin: <input id="fin" name="fin" type="text"></p>
+
+        <select name="function" id="function">
+            <option>Elegir: </option>
+            <option value="Math.sin(x)">Math.sin(x)</option>
+            <option value="Math.cos(x)">Math.cos(x)</option>
+            <option value="Math.tan(x)">Math.tan(x)</option>
+            <option value="Math.tanh(x)">Math.tanh(x)</option>
+        </select>
+        <p><input type="submit"></p>
+    </form>
+    <div id="myPlot" style="width:100%;max-width:700px"></div>
+</body>
+</html>
