@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codificador de Mensajes</title>
+    <script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+	<script type="text/javascript" src="jspdf.js"></script>
+
+	<script type="text/javascript" src="jspdf.plugin.addimage.js"></script>
+
+	<script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.from_html.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #ba91d1;
+        }
+
+        h1 {
+            color: #622883;
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #622883;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 3px solid #621b83;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #955b9c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #bb72c4;
+        }
+
+        #resultado {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #mensaje-codificado {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Examen 3° Parcial <br>Los Romanos</h1>
+    <form id="codificador-form">
+        <label for="mensaje">Mensaje a Codificar:</label>
+        <input type="text" id="mensaje" name="mensaje" minlength="1" maxlength="100" required>
+        <button type="button" onclick="codificarMensaje()">Codificar</button>
+    </form>
+    <div id="resultado">
+        <h2>Mensaje Codificado:</h2>
+        <p id="mensaje-codificado"></p>
+    </div>
+    <iframe frameborder="0" width="500" height="400"></iframe>
+    <script>
+        function esMensajeValido(mensaje) {
+            // Verifica si el mensaje tiene entre 1 y 100 caracteres y solo contiene letras y espacios
+            const regex = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]{1,100}$/;
+            return regex.test(mensaje);
+        }
+        function codificarMensaje() {
+            const mensaje = document.getElementById('mensaje').value.toUpperCase();
+            if (!esMensajeValido(mensaje)) {
+                alert("El mensaje debe tener entre 1 y 100 caracteres y solo puede contener letras y espacios.");
+                return;
+            }
+            const sustitucion = {
+                'A': 'I', 'B': 'C', 'C': 'Ñ', 'D': 'H', 'E': 'O', 'F': 'M', 'G': 'T', 'H': 'L', 'I': 'B', 'J': 'S',
+                'K': 'A', 'L': 'R', 'M': 'Q', 'N': 'P', 'Ñ': 'E', 'O': 'W', 'P': 'V', 'Q': 'F', 'R': 'U', 'S': 'K',
+                'T': 'Y', 'U': 'D', 'V': 'X', 'W': 'J', 'X': 'N', 'Y': 'Z', 'Z': 'G', ' ': ' '
+            };
+
+            let mensajeCodificado = '';
+            for (let i = 0; i < mensaje.length; i++) {
+                const char = mensaje[i];
+                mensajeCodificado += sustitucion[char] || char;
+            }
+
+            // Mostrar el mensaje codificado en un alert
+            alert("Mensaje a codificar"+mensaje + " Mensaje codificado: " + mensajeCodificado);
+
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.text("El mensaje a codificar es:",10,10);
+            doc.text(mensaje,10,20);
+            doc.text("El mensaje codificado:", 10, 30);
+            doc.text(mensajeCodificado, 10, 40);
+            var string = doc.output('datauristring');
+
+            $('iframe').attr('src', string);
+        }
+
+    </script>
+</body>
+</html>
